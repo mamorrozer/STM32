@@ -1,0 +1,31 @@
+#include "Car.h"
+
+void Car_Init(void){
+	Motor_Init();
+}
+void Go_Ahead(void){
+	Motor_SetLeftSpeed(70);
+	Motor_SetRightSpeed(70);
+}
+void Go_Back(void){
+	Motor_SetLeftSpeed(-70);
+	Motor_SetRightSpeed(-70);
+}
+void Car_Stop(void){
+	Motor_SetLeftSpeed(0);
+	Motor_SetRightSpeed(0);
+}
+void Turn_Left(void){
+	Motor_SetLeftSpeed(50);
+	Motor_SetRightSpeed(0);
+}
+void Turn_Right(void){
+	Motor_SetLeftSpeed(0);
+	Motor_SetRightSpeed(50);
+}
+void Turn_InPlace_Left(void){
+	do{
+	Motor_SetLeftSpeed(90);
+	Motor_SetRightSpeed(-90);
+	}while(LM==0)
+}

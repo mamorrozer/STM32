@@ -1,0 +1,10 @@
+17:46:55 **** Incremental Build of configuration Debug for project Calendar ****
+make -j32 all 
+arm-none-eabi-size  Calendar.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33156	    304	   3416	  36876	   900c	Calendar.elf
+Finished building: default.size.stdout
+ 
+
+17:46:55 Build Finished. 0 errors, 0 warnings. (took 201ms)
+

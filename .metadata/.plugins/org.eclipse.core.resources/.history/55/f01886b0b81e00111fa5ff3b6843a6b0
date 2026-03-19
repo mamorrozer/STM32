@@ -1,0 +1,6 @@
+#ifndef INC_OBSTACLE_H_
+#define INC_OBSTACLE_H_
+void Obstacle_Avoid(float distance);
+
+
+#endif /* INC_OBSTACLE_H_ */

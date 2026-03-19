@@ -1,0 +1,3 @@
+../Lib/Src/ws2812.c:9:6:WS2812_Set	16	static
+../Lib/Src/ws2812.c:15:6:WS2812_SetAll	24	static
+../Lib/Src/ws2812.c:21:6:WS2812_Update	24	static

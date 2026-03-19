@@ -1,0 +1,10 @@
+22:03:04 **** Incremental Build of configuration Debug for project Music ****
+make -j32 all 
+arm-none-eabi-size  Music.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14016	     12	   1644	  15672	   3d38	Music.elf
+Finished building: default.size.stdout
+ 
+
+22:03:04 Build Finished. 0 errors, 0 warnings. (took 196ms)
+

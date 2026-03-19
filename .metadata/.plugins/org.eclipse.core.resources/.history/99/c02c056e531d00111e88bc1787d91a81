@@ -1,0 +1,7 @@
+#include "Ultrasonic.h"
+
+void Ultrasonic_Init(void){
+	HAL_TIM_Base_Start(&htim1);
+	HAL_TIM_IC_Start(&htim1, TIM_CHA)
+}
+

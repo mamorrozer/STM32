@@ -1,0 +1,10 @@
+21:23:57 **** Incremental Build of configuration Debug for project WS2812_Slave ****
+make -j32 all 
+arm-none-eabi-size  WS2812_Slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24724	     12	   2772	  27508	   6b74	WS2812_Slave.elf
+Finished building: default.size.stdout
+ 
+
+21:23:57 Build Finished. 0 errors, 0 warnings. (took 212ms)
+

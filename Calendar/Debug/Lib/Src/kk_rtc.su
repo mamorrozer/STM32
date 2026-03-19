@@ -1,0 +1,7 @@
+../Lib/Src/kk_rtc.c:9:26:RTC_EnterInitMode	24	static
+../Lib/Src/kk_rtc.c:35:17:RTC_ReadTimeCounter	32	static
+../Lib/Src/kk_rtc.c:59:26:RTC_ExitInitMode	24	static
+../Lib/Src/kk_rtc.c:85:26:RTC_WriteTimeCounter	24	static
+../Lib/Src/kk_rtc.c:113:19:KK_RTC_SetTime	24	static
+../Lib/Src/kk_rtc.c:120:11:KK_RTC_GetTime	24	static
+../Lib/Src/kk_rtc.c:125:6:KK_RTC_Init	48	static

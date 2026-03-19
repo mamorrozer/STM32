@@ -1,0 +1,6 @@
+#include "Slave.h"
+
+void Encoder_Init(void){
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+}
+void Encoder_()

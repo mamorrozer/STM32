@@ -1,0 +1,18 @@
+12:33:05 **** Build of configuration Debug for project iic ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/i2c.d" -MT"Core/Src/i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/i2c.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc -o "iic.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32\iic\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="iic.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: iic.elf
+ 
+arm-none-eabi-size  iic.elf 
+arm-none-eabi-objdump -h -S iic.elf  > "iic.list"
+   text	   data	    bss	    dec	    hex	filename
+  41292	    468	   2060	  43820	   ab2c	iic.elf
+Finished building: default.size.stdout
+ 
+Finished building: iic.list
+ 
+
+12:33:07 Build Finished. 0 errors, 0 warnings. (took 1s.974ms)
+

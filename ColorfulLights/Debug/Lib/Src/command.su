@@ -1,0 +1,6 @@
+../Lib/Src/command.c:19:6:Command_AddReadIndex	16	static
+../Lib/Src/command.c:29:9:Command_Read	24	static
+../Lib/Src/command.c:58:9:Command_GetLength	4	static
+../Lib/Src/command.c:70:9:Command_GetRemain	8	static
+../Lib/Src/command.c:80:9:Command_Write	24	static
+../Lib/Src/command.c:104:9:Command_GetCommand	32	static

@@ -1,0 +1,48 @@
+#include "main.h"
+#include "usart.h"
+#include "gpio.h"
+#include <stdio.h>
+void Obstacle_Avoid(float distance){
+	Ultrasonic_Start();
+	HAL_UART_Transmit_IT(&huart1, distance, sizeof(distance));
+	if(distance < 15){
+		Car_Stop();
+		Servo_SetAngle(0);
+		HAL_Delay(1000);
+		Ultrasonic_Start();
+		HAL_UART_Transmit_IT(&huart1, distance, sizeof(distance));
+	if(distance > 15){
+		Servo_SetAngle(90);
+		Turn_InPlace_Right();
+		HAL_Delay(1000);
+		Go_Ahead();
+		}
+	else{
+		Servo_SetAngle(180);
+		HAL_Delay(1000);
+		Ultrasonic_Start();
+		HAL_UART_Transmit_IT(&huart1, distance, sizeof(distance));
+		if(distance > 15){
+			Servo_SetAngle(90);
+			Turn_InPlace_Left();
+			HAL_Delay(1000);
+			Go_Ahead();
+						}
+		else{
+			Servo_SetAngle(90);
+			Ultrasonic_Start();
+			Go_Back();
+			HAL_Delay(500);
+			if(distance > 15) {
+				Turn_InPlace_Right();
+				HAL_Delay(1000);
+				Go_Ahead();
+
+			}
+
+		}
+	    }
+
+
+	}
+}

@@ -1,0 +1,2 @@
+../Core/Src/Ultrasonic.c:4:6:Ultrasonic_Init	8	static
+../Core/Src/Ultrasonic.c:9:6:Ultrasonic_Start	8	static

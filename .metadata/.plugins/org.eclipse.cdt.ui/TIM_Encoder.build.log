@@ -1,0 +1,10 @@
+19:49:46 **** Build of configuration Debug for project TIM_Encoder ****
+make -j32 all 
+arm-none-eabi-size  TIM_Encoder.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19228	     92	   3292	  22612	   5854	TIM_Encoder.elf
+Finished building: default.size.stdout
+ 
+
+19:49:46 Build Finished. 0 errors, 0 warnings. (took 199ms)
+

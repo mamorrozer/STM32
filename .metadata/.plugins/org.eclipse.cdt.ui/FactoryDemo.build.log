@@ -1,0 +1,40 @@
+16:45:06 **** Incremental Build of configuration Debug for project FactoryDemo ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:453:13: error: static declaration of 'MX_GPIO_Init' follows non-static declaration
+  453 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/gpio.h:39:6: note: previous declaration of 'MX_GPIO_Init' with type 'void(void)'
+   39 | void MX_GPIO_Init(void);
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:454:13: error: static declaration of 'MX_TIM4_Init' follows non-static declaration
+  454 | static void MX_TIM4_Init(void);
+      |             ^~~~~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/tim.h:44:6: note: previous declaration of 'MX_TIM4_Init' with type 'void(void)'
+   44 | void MX_TIM4_Init(void);
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:491:5: error: redefinition of 'main'
+  491 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:75:5: note: previous definition of 'main' with type 'int(void)'
+   75 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:586:6: error: redefinition of 'SystemClock_Config'
+  586 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:136:6: note: previous definition of 'SystemClock_Config' with type 'void(void)'
+  136 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:716:6: error: redefinition of 'Error_Handler'
+  716 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:200:6: note: previous definition of 'Error_Handler' with type 'void(void)'
+  200 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:67: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+
+16:45:07 Build Failed. 6 errors, 0 warnings. (took 643ms)
+

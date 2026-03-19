@@ -1,0 +1,9 @@
+../Core/Src/main.c:69:8:ADC2Resistance	1
+../Core/Src/main.c:73:8:resistance2Temperature	1
+../Core/Src/main.c:91:5:main	1
+../Core/Src/main.c:157:6:SystemClock_Config	4
+../Core/Src/main.c:204:13:MX_ADC1_Init	6
+../Core/Src/main.c:278:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:309:13:MX_DMA_Init	1
+../Core/Src/main.c:327:13:MX_GPIO_Init	1
+../Core/Src/main.c:350:6:Error_Handler	1

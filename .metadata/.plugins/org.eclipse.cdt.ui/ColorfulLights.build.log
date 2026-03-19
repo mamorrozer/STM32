@@ -1,0 +1,10 @@
+11:25:28 **** Build of configuration Debug for project ColorfulLights ****
+make -j32 all 
+arm-none-eabi-size  ColorfulLights.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15420	     12	   2556	  17988	   4644	ColorfulLights.elf
+Finished building: default.size.stdout
+ 
+
+11:25:29 Build Finished. 0 errors, 0 warnings. (took 695ms)
+

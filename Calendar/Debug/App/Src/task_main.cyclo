@@ -1,0 +1,7 @@
+../App/Src/task_main.c:32:6:onKnobForward	13
+../App/Src/task_main.c:73:6:onKnobBackward	14
+../App/Src/task_main.c:115:6:onKnobPressed	3
+../App/Src/task_main.c:130:6:showTime	1
+../App/Src/task_main.c:145:6:showCursor	3
+../App/Src/task_main.c:157:6:MainTaskInit	1
+../App/Src/task_main.c:168:6:MainTask	2

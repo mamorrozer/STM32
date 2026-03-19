@@ -1,0 +1,7 @@
+../App/Src/task_main.c:32:6:onKnobForward	4	static
+../App/Src/task_main.c:73:6:onKnobBackward	4	static
+../App/Src/task_main.c:115:6:onKnobPressed	16	static
+../App/Src/task_main.c:130:6:showTime	64	static
+../App/Src/task_main.c:145:6:showCursor	32	static
+../App/Src/task_main.c:157:6:MainTaskInit	8	static
+../App/Src/task_main.c:168:6:MainTask	16	static

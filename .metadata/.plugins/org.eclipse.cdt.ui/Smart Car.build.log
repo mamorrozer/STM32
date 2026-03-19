@@ -1,0 +1,59 @@
+23:44:33 **** Incremental Build of configuration Debug for project Smart Car ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/Ultrasonic.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Ultrasonic.d" -MT"Core/Src/Ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/Ultrasonic.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:72:47: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+   72 |                 HAL_UART_Transmit_IT(&huart1, receiveData, Size);
+      |                                               ^~~~~~~~~~~
+      |                                               |
+      |                                               char *
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:751:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  751 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:73:54: warning: pointer targets in passing argument 2 of 'HAL_UARTEx_ReceiveToIdle_IT' differ in signedness [-Wpointer-sign]
+   73 |                 HAL_UARTEx_ReceiveToIdle_IT(&huart1, receiveData, sizeof(receiveData));
+      |                                                      ^~~~~~~~~~~
+      |                                                      |
+      |                                                      char *
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:761:83: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  761 | HAL_StatusTypeDef HAL_UARTEx_ReceiveToIdle_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                          ~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:146:40: warning: pointer targets in passing argument 2 of 'HAL_UARTEx_ReceiveToIdle_IT' differ in signedness [-Wpointer-sign]
+  146 |   HAL_UARTEx_ReceiveToIdle_IT(&huart1, receiveData, sizeof(receiveData));
+      |                                        ^~~~~~~~~~~
+      |                                        |
+      |                                        char *
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:761:83: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  761 | HAL_StatusTypeDef HAL_UARTEx_ReceiveToIdle_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                          ~~~~~~~~~^~~~~
+../Core/Src/main.c:162:7: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  162 |       sprintf(message,"Lens: %.2fcm",distance);
+      |       ^~~~~~~
+../Core/Src/main.c:34:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   33 | #include "Obstacle.h"
+  +++ |+#include <stdio.h>
+   34 | /* USER CODE END Includes */
+../Core/Src/main.c:162:7: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  162 |       sprintf(message,"Lens: %.2fcm",distance);
+      |       ^~~~~~~
+../Core/Src/main.c:162:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "Smart Car.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32\Smart Car\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Smart Car.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Smart Car.elf
+ 
+arm-none-eabi-size  Smart\ Car.elf 
+arm-none-eabi-objdump -h -S Smart\ Car.elf  > "Smart Car.list"
+   text	   data	    bss	    dec	    hex	filename
+  39852	    468	   3540	  43860	   ab54	Smart Car.elf
+Finished building: default.size.stdout
+ 
+Finished building: Smart Car.list
+ 
+
+23:44:33 Build Finished. 0 errors, 5 warnings. (took 654ms)
+

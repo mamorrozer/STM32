@@ -1,0 +1,6 @@
+#ifndef INC_TRACE_H_
+#define INC_TRACE_H_
+#include "gpio.h"
+
+
+#endif /* INC_TRACE_H_ */

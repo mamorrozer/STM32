@@ -1,0 +1,14 @@
+#include "Ultrasonic.h"
+
+
+void Ultrasonic_Init(void){
+	HAL_TIM_Base_Start(&htim1);
+	HAL_TIM_IC_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
+}
+void Ultrasonic_Start(void){
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+	HAL_Delay(0);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+	__HAL_TIM_SET_COUNTER(&htim1,0);
+}

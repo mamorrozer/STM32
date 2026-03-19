@@ -1,0 +1,2 @@
+../Core/Src/ah20.c:5:6:AHT20_Init	24	static
+../Core/Src/ah20.c:15:6:AHT_Red	40	static

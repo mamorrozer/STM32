@@ -1,0 +1,17 @@
+19:04:20 **** Incremental Build of configuration Debug for project TIM_SlaveMode ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TIM_SlaveMode.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32\TIM_SlaveMode\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TIM_SlaveMode.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TIM_SlaveMode.elf
+ 
+arm-none-eabi-size  TIM_SlaveMode.elf 
+arm-none-eabi-objdump -h -S TIM_SlaveMode.elf  > "TIM_SlaveMode.list"
+   text	   data	    bss	    dec	    hex	filename
+  11672	    124	   2044	  13840	   3610	TIM_SlaveMode.elf
+Finished building: default.size.stdout
+ 
+Finished building: TIM_SlaveMode.list
+ 
+
+19:04:21 Build Finished. 0 errors, 0 warnings. (took 774ms)
+

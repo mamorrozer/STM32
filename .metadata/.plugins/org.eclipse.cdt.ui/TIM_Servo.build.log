@@ -1,0 +1,10 @@
+16:23:35 **** Incremental Build of configuration Debug for project TIM_Servo ****
+make -j32 all 
+arm-none-eabi-size  TIM_Servo.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12292	     12	   1716	  14020	   36c4	TIM_Servo.elf
+Finished building: default.size.stdout
+ 
+
+16:23:36 Build Finished. 0 errors, 0 warnings. (took 147ms)
+

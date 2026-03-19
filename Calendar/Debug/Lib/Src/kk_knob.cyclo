@@ -1,0 +1,9 @@
+../Lib/Src/kk_knob.c:8:6:setCounter	1
+../Lib/Src/kk_knob.c:13:10:getCounter	1
+../Lib/Src/kk_knob.c:16:10:getBtnState	1
+../Lib/Src/kk_knob.c:20:10:getTick	1
+../Lib/Src/kk_knob.c:28:6:Knob_SetForwardCallback	1
+../Lib/Src/kk_knob.c:31:6:Knob_SetBuckwardCallback	1
+../Lib/Src/kk_knob.c:34:6:Knob_SetPressCallback	1
+../Lib/Src/kk_knob.c:38:6:Knob_Init	1
+../Lib/Src/kk_knob.c:44:6:Knob_Loop	10

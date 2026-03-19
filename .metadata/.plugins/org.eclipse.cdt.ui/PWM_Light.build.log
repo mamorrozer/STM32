@@ -1,0 +1,10 @@
+19:50:14 **** Build of configuration Debug for project PWM_Light ****
+make -j32 all 
+arm-none-eabi-size  PWM_Light.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7972	     12	   1644	   9628	   259c	PWM_Light.elf
+Finished building: default.size.stdout
+ 
+
+19:50:15 Build Finished. 0 errors, 0 warnings. (took 146ms)
+

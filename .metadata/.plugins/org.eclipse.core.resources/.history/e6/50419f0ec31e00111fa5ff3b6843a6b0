@@ -1,0 +1,66 @@
+#include "main.h"
+#include "usart.h"
+#include <stdio.h>
+#include "Ultrasonic.h"
+#include "Car.h"
+#include "Servo.h"
+#include <string.h>
+extern float distance;
+char buf[20];
+
+void Obstacle_Avoid(void){
+	Ultrasonic_Start();
+	HAL_Delay(100);
+	if(distance < 15){
+		Car_Stop();
+		Servo_SetAngle(0);
+		HAL_Delay(1000);
+		Ultrasonic_Start();
+		sprintf(buf,"%.2f",distance);
+		HAL_UART_Transmit_IT(&huart1, (uint8_t*) buf, strlen(buf));
+	    OLED_NewFrame();
+	    sprintf(message,"Lens: %.2fcm",distance);
+	    OLED_PrintString(0, 0, message, &font16x16, OLED_COLOR_NORMAL);
+	    OLED_ShowFrame();
+	if(distance > 15){
+		Servo_SetAngle(90);
+		Turn_Right();
+		HAL_Delay(1000);
+		Go_Ahead();
+		}
+	else{
+		Servo_SetAngle(180);
+		HAL_Delay(1000);
+		Ultrasonic_Start();
+		sprintf(buf,"%.2f",distance);
+		HAL_UART_Transmit_IT(&huart1, (uint8_t*) buf, strlen(buf));
+		if(distance > 15){
+			Servo_SetAngle(90);
+			Turn_Left();
+			HAL_Delay(1000);
+			Go_Ahead();
+						}
+		else{
+			Servo_SetAngle(90);
+			Ultrasonic_Start();
+			sprintf(buf,"%.2f",distance);
+			HAL_UART_Transmit_IT(&huart1, (uint8_t*) buf, strlen(buf));
+		    OLED_NewFrame();
+		    sprintf(message,"Lens: %.2fcm",distance);
+		    OLED_PrintString(0, 0, message, &font16x16, OLED_COLOR_NORMAL);
+		    OLED_ShowFrame();
+			Go_Back();
+			HAL_Delay(500);
+			if(distance > 15) {
+				Turn_Right();
+				HAL_Delay(1000);
+				Go_Ahead();
+
+			}
+
+		}
+	    }
+
+
+	}
+}

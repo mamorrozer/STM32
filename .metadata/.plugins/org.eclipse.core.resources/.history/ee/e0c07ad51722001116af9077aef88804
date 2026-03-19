@@ -1,0 +1,41 @@
+#include "Ultrasonic.h"
+extern float distance = 0;
+
+void Ultrasonic_Init(void){
+	HAL_TIM_Base_Start(&htim1);
+	HAL_TIM_IC_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
+}
+//void Ultrasonic_Start(void){
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+//	HAL_Delay(0);
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+//	__HAL_TIM_SET_COUNTER(&htim1,0);
+//}
+void Ultrasonic_Start(void)
+{
+    // 完全复位两路捕获
+    HAL_TIM_IC_Stop(&htim1, TIM_CHANNEL_1);
+    HAL_TIM_IC_Stop_IT(&htim1, TIM_CHANNEL_2);
+
+    __HAL_TIM_SET_COUNTER(&htim1, 0);
+
+    // 给TRIG至少10us脉冲
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+    for(int i=0; i<20; i++);
+
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+    for(int i=0; i<120; i++);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+
+    // 重新启动两路捕获
+    HAL_TIM_IC_Start(&htim1, TIM_CHANNEL_1);
+    HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
+
+    // 超时保护：30ms没回波，就给安全距离
+    HAL_Delay(30);
+    if(__HAL_TIM_GET_COUNTER(&htim1) > 10000)
+    {
+        distance = 20;
+    }
+}
